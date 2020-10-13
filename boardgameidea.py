@@ -9,8 +9,8 @@ def main():
     parser.add_argument("-m", type=int, help="define the mechanics number")
     parser.add_argument("-v", "--verbose", action="store_true", help="increase the verbosity")
     args = parser.parse_args()
-    print("### Universe ###")
-    print(data.universes[random.randrange(len(data.universes))] + "\n")
+    print("### Category ###")
+    print(data.categories[random.randrange(len(data.categories))] + "\n")
     mechanics = draw_mechanics(args.m)
     print("### Mechanics ###")
     for mechanic in mechanics:
