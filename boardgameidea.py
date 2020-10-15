@@ -10,7 +10,7 @@ def main():
     parser.add_argument("-v", "--verbose", action="store_true", help="increase the verbosity")
     args = parser.parse_args()
     print("### Category ###")
-    print(data.categories[random.randrange(len(data.categories))] + "\n")
+    print(draw_category() + "\n")
     mechanics = draw_mechanics(args.m)
     print("### Mechanics ###")
     for mechanic in mechanics:
@@ -19,6 +19,10 @@ def main():
 
 def draw_mechanics(nb):
     return random.sample(list(data.mechanics.keys()), nb)
+
+
+def draw_category():
+    return data.categories[random.randrange(len(data.categories))]
 
 
 if __name__ == "__main__":
