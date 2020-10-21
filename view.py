@@ -8,7 +8,9 @@ def generate():
     resMechanics.delete('1.0', END)
     mechanics = boardgameidea.draw_mechanics(int(mechanicsNb.get()))
     for i in range(len(mechanics)):
-        resMechanics.insert(END, mechanics[i] + " -> " + data.mechanics[mechanics[i]] + "\n")
+        title = "### " + mechanics[i] + " ###\n"
+        decoration = "#"*(len(title)-1) + "\n"
+        resMechanics.insert(END, decoration + title + decoration + data.mechanics[mechanics[i]] + "\n\n")
     resMechanics.configure(state='disabled')
     resCategory.set("Category : " + boardgameidea.draw_category())
 
